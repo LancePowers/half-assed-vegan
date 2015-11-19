@@ -1,0 +1,21 @@
+<div layout="row" layout-wrap>
+    <div flex flex-offset="33" class="inset" ng-cloak>
+        <h3>When would you like to be a vegan?</h3>
+        <md-switch ng-model="vm.days.cb1" aria-label="Switch 2" class="md-block md-primary md-hue-1">
+        </md-switch>
+        <md-switch ng-model="vm.days.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn md-block">
+        </md-switch>
+        <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel" class="md-block">
+            Switch (Disabled)
+        </md-switch>
+        <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="vm.days.cb4" class="md-block">
+            Switch (Disabled, Active)
+        </md-switch>
+        <md-switch class="md-primary md-block" md-no-ink aria-label="Switch No Ink" ng-model="vm.days.cb5">
+            Switch (md-primary): No Ink
+        </md-switch>
+        <md-switch ng-model="vm.days.cb6" aria-label="Switch 6" class="md-block">
+        </md-switch>
+        <md-button class="md-fab"></md-button>
+    </div>
+</div>
