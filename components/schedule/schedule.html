@@ -1,11 +1,15 @@
 <div layout="column" class="schedule">
-
+    <md-toolbar class="md-primary md-hue-2 toolbar">
+        <div class="md-toolbar-tools">
+            <h1 class="md-flex toolbar-header">Find your Soy-Mate</h1>
+        </div>
+    </md-toolbar>
 
     <!--    Name and Email-->
     <div layout="row" layout-wrap flex flex="66" class="inset" ng-cloak>
 
         <div ng-class="{'step-leave': !vm.expanded1, 'step-enter': vm.expanded1}">
-            <md-button aria-label="schedule-button" ng-class="{'md-primary md-hue-2': !vm.visible[5],'md-secondary md-hue-2': vm.visible[5]}" class="md-fab" ng-click="vm.toggleExpanded(1)">#1</md-button>
+            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(1)"><span class="icon-text">1</span></md-button>
         </div>
 
         <form name="veganForm" class="input-contain" ng-show="vm.visible[1]">
@@ -33,7 +37,7 @@
     <!--    Day Selection-->
     <div layout="row" layout-wrap flex class="inset" ng-cloak>
         <div ng-class="{'step-leave': !vm.visible[2], 'step-enter': vm.visible[2]}">
-            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(2)">#2</md-button>
+            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(2)"><span class="icon-text">2</span></md-button>
         </div>
         <div class="switch input-contain" ng-show="vm.visible[2]" layout="column">
             <md-switch ng-repeat="day in vm.days" ng-model="day.val" aria-label="Switch 2" class="md-block md-primary md-hue-1">
@@ -43,7 +47,7 @@
     </div>
     <div layout="row" layout-wrap flex class="inset" ng-cloak>
         <div ng-class="{'step-leave': !vm.visible[3], 'step-enter': vm.visible[3]}">
-            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(3)">#3</md-button>
+            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(3)"><span class="icon-text">3</span></md-button>
         </div>
         <div class="switch input-contain" ng-show="vm.visible[3]" layout="column">
             <md-switch ng-repeat="day in vm.days" ng-model="day.val" aria-label="Switch 2" class="md-block md-primary md-hue-1">

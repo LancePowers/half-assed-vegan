@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Half-Assed Vegan</title>
 
-    <link rel="stylesheet" type="text/css" href="components/schedule/schedule.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc1/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="components/schedule/schedule.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <!--    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">-->
 
@@ -14,8 +14,12 @@
 
 <body>
     <div layout="row">
-        <img src="../img/logo.png" flex class="logoBtn"></img>
-        <schedule flex></schedule>
+        <img src="../img/logo.png" class="logoBtn"></img>
+        <div layout="row" class="content">
+            <schedule flex flex="60"></schedule>
+
+            <!--        <div flex flex="66"></div>-->
+        </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
