@@ -4,55 +4,60 @@
             <h1 class="md-flex toolbar-header">Find your Soy-Mate</h1>
         </div>
     </md-toolbar>
+    <div ng-if="!vm.start" layout="column" layout-align="center center">
+        <p class="explanation">Have you got the birkenstocks and bumper stickers, but just can't give up the bacon? We get it. You're a half-assed vegan! The good news is, you're not alone. Make a commitment to skip the beef on chosen days each week and we'll find a partner for you. Combined you'll become one full-fledged vegan!</p>
+        <md-button class="md-fab md-primary md-hue-2" ng-click="vm.toggleStart()">Go</md-button>
+    </div>
+    <div ng-if="vm.start">
+        <!--    Name and Email-->
+        <div layout="row" layout-wrap flex flex="66" class="inset" ng-cloak>
 
-    <!--    Name and Email-->
-    <div layout="row" layout-wrap flex flex="66" class="inset" ng-cloak>
+            <div ng-class="{'step-leave': !vm.expanded1, 'step-enter': vm.expanded1}">
+                <img src="/img/red.png" aria-label="schedule-button" class="md-fab md-primary md-hue-2 pepper" ng-click="vm.toggleExpanded(1)"></img>
+            </div>
 
-        <div ng-class="{'step-leave': !vm.expanded1, 'step-enter': vm.expanded1}">
-            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(1)"><span class="icon-text">1</span></md-button>
-        </div>
-
-        <form name="veganForm" class="input-contain" ng-show="vm.visible[1]">
-            <md-input-container class="md-block">
-                <label> Vegan Name</label>
-                <input required name="clientName" ng-model="vegan.clientName">
-                <div ng-messages="veganForm.clientName.$error" ng-blur="vm.toggleExpanded(4)" ng-show="vm.visible[4]">
-                    <div ng-message="required">This is required.</div>
-                </div>
-            </md-input-container>
-            <md-input-container class="md-block">
-                <label> Vegan Email</label>
-                <input required type="email" name="clientEmail" ng-model="vegan.clientEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-                <div ng-messages="veganForm.clientEmail.$error" role="alert" ng-blur="vm.toggleExpanded(5)" ng-show="vm.visible[5]">
-                    <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-                        Your email must be between 10 and 100 characters long and look like an e-mail address.
+            <form name="veganForm" class="input-contain" ng-show="vm.visible[1]">
+                <md-input-container class="md-block">
+                    <label> Vegan Name</label>
+                    <input required name="clientName" ng-model="vegan.clientName">
+                    <div ng-messages="veganForm.clientName.$error" ng-blur="vm.toggleExpanded(4)" ng-show="vm.visible[4]">
+                        <div ng-message="required">This is required.</div>
                     </div>
-                </div>
-            </md-input-container>
-        </form>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label> Vegan Email</label>
+                    <input required type="email" name="clientEmail" ng-model="vegan.clientEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                    <div ng-messages="veganForm.clientEmail.$error" role="alert" ng-blur="vm.toggleExpanded(5)" ng-show="vm.visible[5]">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                        </div>
+                    </div>
+                </md-input-container>
+            </form>
 
-    </div>
+        </div>
 
 
-    <!--    Day Selection-->
-    <div layout="row" layout-wrap flex class="inset" ng-cloak>
-        <div ng-class="{'step-leave': !vm.visible[2], 'step-enter': vm.visible[2]}">
-            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(2)"><span class="icon-text">2</span></md-button>
+        <!--    Day Selection-->
+        <div layout="row" layout-wrap flex class="inset" ng-cloak>
+            <div ng-class="{'step-leave': !vm.visible[2], 'step-enter': vm.visible[2]}">
+                <img src="/img/yellow.png" aria-label="schedule-button" class="md-fab md-primary md-hue-2 pepper" ng-click="vm.toggleExpanded(2)"></img>
+            </div>
+            <div class="switch input-contain" ng-show="vm.visible[2]" layout="column">
+                <md-switch ng-repeat="day in vm.days" ng-model="day.val" aria-label="Switch 2" class="md-block md-primary md-hue-1">
+                    {{day.name}}
+                </md-switch>
+            </div>
         </div>
-        <div class="switch input-contain" ng-show="vm.visible[2]" layout="column">
-            <md-switch ng-repeat="day in vm.days" ng-model="day.val" aria-label="Switch 2" class="md-block md-primary md-hue-1">
-                {{day.name}}
-            </md-switch>
-        </div>
-    </div>
-    <div layout="row" layout-wrap flex class="inset" ng-cloak>
-        <div ng-class="{'step-leave': !vm.visible[3], 'step-enter': vm.visible[3]}">
-            <md-button aria-label="schedule-button" class="md-fab md-primary md-hue-2" ng-click="vm.toggleExpanded(3)"><span class="icon-text">3</span></md-button>
-        </div>
-        <div class="switch input-contain" ng-show="vm.visible[3]" layout="column">
-            <md-switch ng-repeat="day in vm.days" ng-model="day.val" aria-label="Switch 2" class="md-block md-primary md-hue-1">
-                {{day.name}}
-            </md-switch>
+        <div layout="row" layout-wrap flex class="inset" ng-cloak>
+            <div ng-class="{'step-leave': !vm.visible[3], 'step-enter': vm.visible[3]}">
+                <img src="/img/green.png" aria-label="schedule-button" class="md-fab md-primary md-hue-2 pepper" ng-click="vm.toggleExpanded(1)"></img>
+            </div>
+            <div class="switch input-contain" ng-show="vm.visible[3]" layout="column">
+                <md-switch ng-repeat="day in vm.days" ng-model="day.val" aria-label="Switch 2" class="md-block md-primary md-hue-1">
+                    {{day.name}}
+                </md-switch>
+            </div>
         </div>
     </div>
 </div>

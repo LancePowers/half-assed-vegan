@@ -18,8 +18,11 @@
 
     function ScheduleController() {
         var vm = this;
-
-        //ng-show hide variables
+        vm.start = false;
+        vm.toggleStart = function () {
+                vm.start = !vm.start;
+            }
+            //ng-show hide variables
         vm.visible = [false, false, false, false, false]
         vm.toggleExpanded = function (num) {
 

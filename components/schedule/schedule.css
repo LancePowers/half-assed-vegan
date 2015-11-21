@@ -31,16 +31,20 @@
     border-radius: 10px;
 }
 
-.icon-text {
-    font-size: 2em;
+.pepper {
+    max-height: 100px;
 }
 
-.toolbar {
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-}
+.toolbar {}
 
 .toolbar-header {
+    font-size: 5em;
     margin-left: 200px;
     font-family: sans-serif;
+}
+
+.explanation {
+    font-size: 1.5em;
+    padding: 2%;
+    color: black;
 }

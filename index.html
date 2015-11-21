@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    <div layout="row">
-        <img src="../img/logo.png" class="logoBtn"></img>
-        <div layout="row" class="content">
+    <div layout="row" layout-md="column">
+        <img src="../img/logo.png" flex class="logoBtn"></img>
+        <div layout="row" flex class="content">
             <schedule flex flex="60"></schedule>
 
             <!--        <div flex flex="66"></div>-->
@@ -32,6 +32,7 @@
     <script type="text/javascript" src="components/schedule/schedule.module.js"></script>
     <script type="text/javascript" src="components/schedule/schedule.directive.js"></script>
     <script type="text/javascript" src="app.module.js"></script>
+    <script type="text/javascript" src="services/router.js"></script>
 </body>
 
 </html>

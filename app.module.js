@@ -7,15 +7,28 @@
         'ngMessages'
     ])
         .config(function ($mdThemingProvider) {
-            // Extend the red theme with a few different colors
-            var darkVeganGreenMap = $mdThemingProvider.extendPalette('green', {
-                '900': '3c462b'
+            $mdThemingProvider.definePalette('amazingPaletteName', {
+                '50': '5F7140',
+                '100': '5F7140',
+                '200': '5F7140',
+                '300': '598846',
+                '400': '598846',
+                '500': '417E44',
+                '600': '417E44',
+                '700': '5F7140',
+                '800': '5F7140',
+                '900': 'b71c1c',
+                'A100': 'ff8a80',
+                'A200': 'ff5252',
+                'A400': 'ff1744',
+                'A700': 'd50000',
+                'contrastDefaultColor': 'light', // whether, by default, text (contrast)
+                // on this palette should be dark or light
+                'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+     '200', '300', '400', 'A100'],
+                'contrastLightColors': undefined // could also specify this if default was 'dark'
             });
-            // Register the new color palette map with the name <code>neonRed</code>
-            $mdThemingProvider.definePalette('darkVeganGreen', darkVeganGreenMap);
             $mdThemingProvider.theme('default')
-                .primaryPalette('darkVeganGreen')
-                .accentPalette('darkVeganGreen')
-                .backgroundPalette('red');
+                .primaryPalette('amazingPaletteName')
         });
 })();
