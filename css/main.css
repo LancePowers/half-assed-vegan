@@ -1,1 +1,15 @@
-/* add custom styles */
+body {
+    background-image: url(../img/bkg.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logoBtn {
+    /*    float: left;*/
+    max-height: 200px;
+    max-width: 200px;
+    padding: 25px;
+    margin: 50px;
+}

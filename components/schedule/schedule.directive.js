@@ -18,14 +18,46 @@
 
     function ScheduleController() {
         var vm = this;
-        vm.days = {
-            Monday: true,
-            Tuesday: true,
-            Wednesday: false,
-            Thursday: false,
-            Friday: false,
-            Saturday: false,
-            Sunday: false
+
+        //ng-show hide variables
+        vm.visible = [false, false, false, false, false]
+        vm.toggleExpanded = function (num) {
+
+            vm.visible.forEach(function (element, index) {
+                if (index === num) {
+                    console.log(this)
+                    vm.visible[index] = !vm.visible[index]
+                } else {
+                    vm.visible[index] = false
+                }
+            })
+
+        }
+        vm.vegan = {
+            clientName: "",
+            clientEmail: ""
         };
+        vm.days = [{
+            name: 'Monday',
+            val: false
+            }, {
+            name: 'Tuesday',
+            val: false
+            }, {
+            name: 'Wednesday',
+            val: false
+            }, {
+            name: 'Thursday',
+            val: false
+            }, {
+            name: 'Friday',
+            val: false
+            }, {
+            name: 'Saturday',
+            val: false
+            }, {
+            name: 'Sunday',
+            val: false
+            }]
     }
 })();

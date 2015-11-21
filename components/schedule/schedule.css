@@ -1,0 +1,33 @@
+.switch {
+    background: rgba(0, 0, 0, .5)
+}
+
+.switch.ng-move,
+.switch.ng-enter,
+.switch.ng-leave {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+}
+
+.switch.ng-leave.ng-leave-active,
+.switch.ng-move,
+.switch.ng-enter {
+    opacity: 0;
+}
+
+.switch.ng-leave,
+.switch.ng-move.ng-move-active,
+.switch.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.schedule {
+    color: floralwhite;
+    margin-top: 100px;
+}
+
+.input-contain {
+    background-color: rgba(255, 255, 255, .8);
+    color: dimgray;
+    border-radius: 10px;
+}
