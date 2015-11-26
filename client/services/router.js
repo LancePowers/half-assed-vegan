@@ -10,7 +10,7 @@
         var obj = {};
         //2. post request
         obj.post = function (payload) {
-            var url = 'http://localhost:3000/v1/vegan';
+            var url = 'http://localhost:3000/api/v1/vegan';
             return $http.post(url, payload);
         };
         return obj;

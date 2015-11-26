@@ -5,8 +5,9 @@
         </div>
     </md-toolbar>
     <div ng-if="!vm.start" layout="column" layout-align="center center">
-        <p class="explanation">Have you got the birkenstocks and bumper stickers, but just can't give up the bacon? We get it. You're a half-assed vegan! The good news is, you're not alone. Make a commitment to skip the beef on chosen days each week and we'll find a partner for you. Combined you'll become one full-fledged vegan!</p>
-        <md-button class="md-fab md-primary md-hue-2" ng-click="vm.toggleStart()">Go</md-button>
+        <p class="explanation">{{vm.message}}</p>
+        <a ng-href="mailto:{{vm.partner.email}}">{{vm.partner.email}}</a>
+        <md-button class="md-fab md-primary md-hue-2" ng-click="vm.toggleStart()">{{vm.button}}</md-button>
     </div>
     <div ng-if="vm.start">
         <!--    Name and Email-->
@@ -19,15 +20,15 @@
             <form name="veganForm" class="input-contain" ng-show="vm.visible[1]">
                 <md-input-container class="md-block">
                     <label> Vegan Name</label>
-                    <input required name="clientName" ng-model="vegan.clientName">
-                    <div ng-messages="veganForm.clientName.$error" ng-blur="vm.toggleExpanded(4)" ng-show="vm.visible[4]">
+                    <input required name="user" ng-model="vm.vegan.user">
+                    <div ng-messages="veganForm.user.$error" ng-blur="vm.toggleExpanded(4)" ng-show="vm.visible[4]">
                         <div ng-message="required">This is required.</div>
                     </div>
                 </md-input-container>
                 <md-input-container class="md-block">
                     <label> Vegan Email</label>
-                    <input required type="email" name="clientEmail" ng-model="vegan.clientEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-                    <div ng-messages="veganForm.clientEmail.$error" role="alert" ng-blur="vm.toggleExpanded(5)" ng-show="vm.visible[5]">
+                    <input required type="email" name="email" ng-model="vm.vegan.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                    <div ng-messages="veganForm.email.$error" role="alert" ng-blur="vm.toggleExpanded(5)" ng-show="vm.visible[5]">
                         <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
                             Your email must be between 10 and 100 characters long and look like an e-mail address.
                         </div>

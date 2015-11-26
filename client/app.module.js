@@ -4,7 +4,8 @@
         'app.components',
         'ngMaterial',
         'ngAnimate',
-        'ngMessages'
+        'ngMessages',
+        'ngRoute'
     ])
         .config(function ($mdThemingProvider) {
             $mdThemingProvider.definePalette('amazingPaletteName', {
