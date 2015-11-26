@@ -14,16 +14,17 @@
         };
     }
 
-    ScheduleController.$inject = [];
+    ScheduleController.$inject = ['router'];
 
-    function ScheduleController() {
+    function ScheduleController(router) {
         var vm = this;
         vm.start = false;
         vm.toggleStart = function () {
-                vm.start = !vm.start;
-            }
-            //ng-show hide variables
-        vm.visible = [false, false, false, false, false]
+            vm.start = !vm.start;
+        }
+
+        vm.visible = [false, false, false, false, false];
+
         vm.toggleExpanded = function (num) {
 
             vm.visible.forEach(function (element, index) {
@@ -35,11 +36,14 @@
                 }
             })
 
-        }
-        vm.vegan = {
-            clientName: "",
-            clientEmail: ""
         };
+
+        vm.vegan = {
+            user: "",
+            email: "",
+            schedule: ""
+        };
+
         vm.days = [{
             name: 'Monday',
             val: false
@@ -62,5 +66,25 @@
             name: 'Sunday',
             val: false
             }]
+
+        vm.selection = function () {
+            var code = ''
+            for (var i = 0; i < 7; i++) {
+                if (vm.days[i.val]) {
+                    code += '1';
+                } else {
+                    code += '0';
+                }
+            }
+            vm.vegan.schedule = code;
+        }
+
+        vm.match = function () {
+            vm.selection();
+            router.post(vm.vegan)
+                .then(function (response) {
+                    console.log(response)
+                });
+        }
     }
 })();

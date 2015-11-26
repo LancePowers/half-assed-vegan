@@ -49,15 +49,14 @@
                 </md-switch>
             </div>
         </div>
+
+
+        <!--Submit pepper-->
         <div layout="row" layout-wrap flex class="inset" ng-cloak>
             <div ng-class="{'step-leave': !vm.visible[3], 'step-enter': vm.visible[3]}">
-                <img src="/img/green.png" aria-label="schedule-button" class="md-fab md-primary md-hue-2 pepper" ng-click="vm.toggleExpanded(1)"></img>
+                <img src="/img/green.png" aria-label="schedule-button" class="md-fab md-primary md-hue-2 pepper" ng-click="vm.match()"></img>
             </div>
-            <div class="switch input-contain" ng-show="vm.visible[3]" layout="column">
-                <md-switch ng-repeat="day in vm.days" ng-model="day.val" aria-label="Switch 2" class="md-block md-primary md-hue-1">
-                    {{day.name}}
-                </md-switch>
-            </div>
+
         </div>
     </div>
 </div>
